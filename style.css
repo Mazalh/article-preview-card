@@ -1,158 +1,172 @@
+/* Базові стилі для тіла сторінки */
 body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: #f0f0f0; 
+    background-color: #f0f0f0; /* Легкий сірий фон сторінки */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
-.card-container {
-    width: 800px; /* Фіксована ширина для контролю макету */
-    max-width: 95%;
+/* Оболонка для центрування і обмеження ширини банера */
+.university-banner-wrapper {
+    width: 900px; /* Задаємо фіксовану ширину, як на зразку */
+    max-width: 95vw; /* Адаптивність для менших екранів */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Легка тінь для "плаваючого" ефекту */
+    margin: 20px; /* Відступи від країв вікна */
 }
 
-/* Основний закруглений блок */
-.card {
-    display: block; /* Змінено з flex на block для абсолютної/плаваючої розмітки */
+/* Основний контейнер банера, що імітує велику заокруглену "карту" */
+.university-banner {
     position: relative;
-    background: #f7f7f7; /* Світло-бежевий фон, як на постері */
-    border-radius: 40px; 
-    padding: 30px; 
-    min-height: 480px; 
-    overflow: hidden; /* Важливо для обрізання фону ілюстрації */
+    display: flex;
+    background-color: #ffffff; /* Білий фон основного блоку */
+    border-radius: 40px; /* Сильне заокруглення кутів */
+    min-height: 500px; /* Мінімальна висота для розміщення вмісту */
+    overflow: hidden; /* Важливо для правильного відображення ілюстрації та тіней */
 }
 
-/* ------------------- Ліва частина: Ілюстрація ------------------- */
-.left-block {
-    position: absolute;
-    top: 0;
+/* ------------------------------------- Ліва частина: Ілюстрація ------------------------------------- */
+.banner-illustration-area {
+    position: absolute; /* Абсолютне позиціонування для накладання */
     left: 0;
-    width: 65%; /* Більше місця для ілюстрації */
+    top: 0;
+    width: 68%; /* Ширина, що дозволяє тексту накладатися */
     height: 100%;
-    z-index: 10; 
-    /* Додаємо маскування, щоб ілюстрація плавно зливалася з фоном */
-    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
-    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    z-index: 10; /* Розміщуємо під текстовим блоком */
+    /* Ефект "розмиття" краю, щоб текст плавно накладався */
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
 }
 
-.university-img {
+.university-building-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    /* Забезпечуємо, щоб ілюстрація була всередині card */
-    border-radius: 40px 0 0 40px; 
+    object-fit: cover; /* Зображення покриває весь контейнер */
+    object-position: center; /* Центруємо зображення */
+    border-radius: 40px 0 0 40px; /* Заокруглюємо тільки ліві кути */
 }
 
-/* ------------------- Права частина: Текст та інфо ------------------- */
-.right-block {
-    position: relative; 
-    float: right; /* Розташовуємо праворуч */
-    width: 45%; /* Менша ширина, але вона накладається на left-block */
-    min-height: 450px;
-    padding: 20px 0 0 0;
-    z-index: 20;
+/* ------------------------------------- Права частина: Вміст ------------------------------------- */
+.banner-content-area {
+    position: relative; /* Для позиціонування дочірніх елементів */
+    flex-grow: 1; /* Займає весь доступний простір, що залишився */
+    width: 45%; /* Явно вказуємо ширину для накладання */
+    margin-left: auto; /* Зміщуємо блок вправо */
+    padding: 30px 40px 30px 40px; /* Внутрішні відступи */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Розтягуємо вміст вертикально */
+    justify-content: space-between; /* Розтягуємо вміст */
+    z-index: 20; /* Розміщуємо над ілюстрацією */
 }
 
-/* ------------------- 1. Соц. іконки ------------------- */
-.social-icons {
+/* ------------------------------------- Соціальні іконки (верхній правий кут) ------------------------------------- */
+.social-links-container {
     position: absolute;
-    top: 0px; 
-    right: 0px; 
+    top: 30px; /* Відступ зверху */
+    right: 40px; /* Відступ справа */
     display: flex;
-    gap: 5px;
-    z-index: 30; 
+    gap: 8px; /* Проміжок між іконками */
+    z-index: 30;
 }
 
-.icon-circle {
+.social-icon-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    overflow: hidden;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%; /* Круглі іконки */
+    background-color: #f0f0f0; /* Світло-сірий фон */
+    border: 1px solid #e0e0e0; /* Тонка рамка */
+    transition: background-color 0.2s ease;
 }
 
-.social-icons img {
+.social-icon-box:hover {
+    background-color: #e0e0e0; /* Зміна фону при наведенні */
+}
+
+.social-icon-box img {
     width: 20px;
     height: 20px;
     object-fit: contain;
 }
 
-/* ------------------- 2. Заголовок ------------------- */
-.header {
-    margin-top: 50px; /* Відступ від соц. іконок */
-    margin-bottom: 20px;
-    line-height: 1.1;
+/* ------------------------------------- Заголовок ------------------------------------- */
+.banner-headline {
+    margin-top: 50px; /* Зсув заголовка вниз */
+    margin-bottom: 25px;
     color: #333;
+    line-height: 1.15;
     text-align: left;
-    font-weight: 700;
 }
 
-.title-line {
+.banner-headline span {
     display: block; /* Кожен span на новому рядку */
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 2.1em; /* Великий розмір шрифту */
+    font-weight: 700; /* Жирний шрифт */
 }
+/* Можна додати окремі стилі для "Університет" */
 
-/* ------------------- 3. Основний текст ------------------- */
-.main-text {
-    font-size: 14px;
-    line-height: 1.5;
+
+/* ------------------------------------- Основний текст ------------------------------------- */
+.banner-main-text {
+    font-size: 0.95em; /* Трохи менший розмір тексту */
+    line-height: 1.6;
     color: #555;
-    flex-grow: 1; /* Займати весь простір між заголовком і контактами */
-    padding-bottom: 20px;
+    flex-grow: 1; /* Займає доступний вертикальний простір */
+    margin-bottom: 25px; /* Відступ від контактів */
 }
 
-/* ------------------- 4. Контакти ------------------- */
-.contact-area {
-    display: flex; /* Розміщення аватара та тексту поруч */
+/* ------------------------------------- Контактна інформація ------------------------------------- */
+.contact-info-block {
+    display: flex; /* Аватар та текст поруч */
     align-items: center;
-    justify-content: flex-start; 
-    margin-bottom: 70px; /* Залишаємо місце для кнопки Share */
-    padding-left: 10px;
+    margin-bottom: 80px; /* Відступ від кнопки Share */
 }
 
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.contact-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%; /* Круглий аватар */
     margin-right: 15px;
-    flex-shrink: 0;
+    object-fit: cover;
+    border: 2px solid #eee; /* Тонка рамка навколо аватара */
 }
 
-.contact-details p {
-    margin: 2px 0;
-    font-size: 13px;
+.contact-details-text p {
+    margin: 2px 0; /* Невеликий відступ між рядками контакту */
+    font-size: 0.85em; /* Розмір тексту контактів */
     color: #333;
     font-weight: 500;
 }
 
-/* ------------------- 5. Кнопка Share ------------------- */
+/* ------------------------------------- Кнопка Share (нижній правий кут) ------------------------------------- */
 .share-button {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 80px; 
-    height: 80px;
-    border-radius: 50%; 
-    background: #4CAF50; 
+    bottom: 30px; /* Відступ знизу */
+    right: 30px; /* Відступ справа */
+    width: 80px; /* Ширина */
+    height: 80px; /* Висота */
+    border-radius: 50%; /* Кругла форма */
+    background-color: #4CAF50; /* Яскраво-зелений колір */
     color: #fff;
     border: none;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Тінь для ефекту "виступаючої" кнопки */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
     z-index: 30;
+}
+
+.share-button:hover {
+    background-color: #45a049; /* Темніший зелений при наведенні */
+    transform: translateY(-2px); /* Легкий ефект підняття */
 }
