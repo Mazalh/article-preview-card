@@ -1,15 +1,44 @@
-<div class="card">
-  <img src="images/article-image.jpg" alt="Article Image" class="card-img">
-  <div class="card-content">
-    <h2>Заголовок статті</h2>
-    <p>Короткий опис статті...</p>
-    <div class="card-footer">
-      <button id="share-btn">Поширити</button>
-      <div id="share-menu" class="hidden">
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
-      </div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Картка з Share</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Фото університету -->
+    <img src="images/photouni.jpg" alt="Університет" class="photouni">
+
+    <!-- Середній фон -->
+    <div class="midlspace"></div>
+
+    <!-- Заголовок -->
+    <div class="header">Тут заголовок</div>
+
+    <!-- Основна інформація -->
+    <div class="baseinfo">Тут основна інформація</div>
+
+    <!-- Лого / Фото профілю -->
+    <img src="images/logo.jpg" alt="Лого" class="logo">
+
+    <!-- Кнопка Share -->
+    <div class="sharebutton" onclick="toggleSharePanel()"></div>
+
+    <!-- Панель Share з іконками -->
+    <div class="backpanelshare" id="backpanelshare">
+      <img src="images/facebooklogo.png" class="facebooklogo">
+      <img src="images/instagramlogo.png" class="instagramlogo">
+      <img src="images/copyurl.png" class="copyurl">
+    </div>
+
+    <!-- Інформація про мене (контакти) -->
+    <div class="info">
+      <p>email@example.com</p>
+      <p>+380 00 000 0000</p>
     </div>
   </div>
-</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
