@@ -21,7 +21,7 @@ body {
 .photouni {
   width: 100%;
   max-height: 500px;
-  object-fit: cover; /* видно центр картинки */
+  object-fit: cover; /* центр картинки видно */
   display: block;
   border-radius: 20px 20px 0 0;
   margin: 0 auto; /* центр по горизонталі */
