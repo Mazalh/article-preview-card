@@ -1,6 +1,9 @@
-const shareBtn = document.getElementById("share-btn");
-const shareMenu = document.getElementById("share-menu");
+function toggleSharePanel() {
+  const panel = document.getElementById('backpanelshare');
+  panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
+}
 
-shareBtn.addEventListener("click", () => {
-  shareMenu.classList.toggle("active");
-});
+// Клік на іконки (тільки для демонстрації)
+document.querySelector('.facebooklogo').addEventListener('click', () => alert('Facebook'));
+document.querySelector('.instagramlogo').addEventListener('click', () => alert('Instagram'));
+document.querySelector('.copyurl').addEventListener('click', () => alert('Скопійовано!'));
