@@ -1,23 +1,22 @@
 body {
   margin: 0;
   padding: 0;
-  background: #f5f5f5;
   font-family: Arial, sans-serif;
+  background: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 100vh;
+  padding-top: 20px;
 }
 
 .card-container {
-  position: relative;
   width: 800px;
 }
 
 /* Фото університету */
 .photouni {
   width: 100%;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
   display: block;
@@ -28,25 +27,9 @@ body {
   position: relative;
   background: #fff;
   border-radius: 20px;
-  margin-top: -50px; /* частково перекриває фотку */
-  padding: 20px;
+  margin-top: -50px;
+  padding: 80px 20px 20px 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* Заголовок */
-.header {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-/* Основна інформація */
-.baseinfo {
-  font-size: 16px;
-  background: #f0f0f0;
-  border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 20px;
 }
 
 /* Лого */
@@ -59,6 +42,23 @@ body {
   left: 20px;
   border: 3px solid #fff;
   object-fit: cover;
+}
+
+/* Заголовок */
+.header {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Основна інформація */
+.baseinfo {
+  font-size: 16px;
+  background: #f0f0f0;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 /* Share кнопка */
@@ -113,7 +113,11 @@ body {
 
 /* Інформація про мене */
 .info {
-  margin-top: 20px;
   font-size: 14px;
-  lin
+  line-height: 1.5;
+  background: #f0f0f0;
+  border-radius: 15px;
+  padding: 10px 15px;
+  margin-top: 20px;
+}
 
