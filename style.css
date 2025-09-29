@@ -21,10 +21,11 @@ body {
 .photouni {
   width: 100%;
   max-height: 500px;
-  object-fit: cover; /* заповнює контейнер і видно центр картинки */
+  object-fit: cover; /* видно центр картинки */
   display: block;
   border-radius: 20px 20px 0 0;
   margin: 0 auto;
+  transform: translateX(-20px); /* трохи зсуваємо для балансу */
 }
 
 /* Основний фон */
@@ -46,29 +47,39 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  border: 3px solid #fff;
   object-fit: cover;
+  border: 3px solid #fff;
+}
+
+/* Ім'я під логом */
+.name-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
 }
 
 /* Заголовок */
 .header {
   font-size: 28px;
   font-weight: bold;
+  margin-top: 20px;
   margin-bottom: 15px;
   text-align: center;
 }
 
 /* Основна інформація */
 .baseinfo {
-  width: 100%;
+  width: 90%;
   font-size: 16px;
+  line-height: 1.6;
   background: #f0f0f0;
   border-radius: 15px;
-  padding: 15px;
+  padding: 20px;
   margin-bottom: 20px;
   text-align: center;
+  box-sizing: border-box;
+  word-wrap: break-word;
 }
 
 /* Share кнопка */
@@ -113,24 +124,5 @@ body {
 
 .social-icon:hover {
   transform: scale(1.2);
-}
-
-/* Інформація про мене */
-.info {
-  width: 100%;
-  font-size: 14px;
-  line-height: 1.5;
-  background: #f0f0f0;
-  border-radius: 15px;
-  padding: 10px 15px;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-bottom: 5px;
 }
 
