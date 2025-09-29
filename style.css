@@ -15,14 +15,14 @@ body {
     max-width: 95vw;
 }
 
-/* Основний контейнер, що імітує заокруглену "карту" */
+/* Основний контейнер (заокруглений фон) */
 .ad-card {
     position: relative;
     display: flex;
     background-color: #f7f7f7; /* Світло-бежевий фон */
     border-radius: 40px; 
     min-height: 520px; 
-    padding: 30px; /* Внутрішній відступ для вмісту */
+    padding: 30px; 
     overflow: hidden; 
 }
 
@@ -31,25 +31,27 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    width: 65%; /* Ширина ілюстрації */
+    width: 65%;
     height: 100%;
     z-index: 10;
+    /* Імітуємо м'яку, заокруглену форму, що виступає вправо */
+    clip-path: ellipse(60% 100% at 35% 50%); 
 }
 
 .photouni {
     width: 100%;
     height: 100%;
     object-fit: cover; 
-    /* Використовуємо clip-path або маску, щоб імітувати заокруглену форму ілюстрації на фоні */
-    clip-path: ellipse(60% 100% at 35% 50%); 
+    /* Додаємо заокруглення для ілюстрації, щоб збігалося з кутами card */
+    border-radius: 40px 0 0 40px; 
 }
 
 /* ------------------------------------- Права частина: Вміст ------------------------------------- */
 .content-area {
     position: relative;
     width: 50%; 
-    margin-left: auto; /* Зміщуємо блок вправо */
-    padding: 10px 0 10px 40px; /* Відступи та накладання */
+    margin-left: auto; /* Вирівнюємо вправо */
+    padding: 10px 0 10px 40px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
@@ -60,13 +62,14 @@ body {
 .social-links-bar {
     position: absolute;
     top: 0px; 
-    right: -10px; /* Злегка виносимо за межі */
+    right: 0px; 
     display: flex;
     gap: 5px; 
-    background-color: #f7f7f7;
+    background-color: #f7f7f7; /* Фон, як у card */
     border-radius: 20px;
     padding: 5px 10px;
     z-index: 30;
+    border: 1px solid #e0e0e0; /* Тонка рамка */
 }
 
 .social-icon-box {
@@ -75,15 +78,17 @@ body {
     justify-content: center;
     width: 30px;
     height: 30px;
+    /* Видаляємо тут border-radius, залишаємо на іконках, щоб імітувати оригінал */
 }
 
 .social-icon-box img {
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
+    border-radius: 5px;
 }
 
-/* ------------------------------------- 2. Заголовок (header) ------------------------------------- */
+/* ------------------------------------- 2. Заголовок ------------------------------------- */
 .header {
     margin-top: 50px; 
     margin-bottom: 20px;
@@ -94,10 +99,10 @@ body {
 
 .header span {
     display: block; 
-    font-size: 2em; 
+    font-size: 2.1em; /* Великий розмір */
 }
 
-/* ------------------------------------- 3. Основний текст (baseinfo) ------------------------------------- */
+/* ------------------------------------- 3. Основний текст ------------------------------------- */
 .baseinfo {
     font-size: 0.85em; 
     line-height: 1.5;
@@ -106,7 +111,7 @@ body {
     padding-bottom: 20px;
 }
 
-/* ------------------------------------- 4. Контактна інформація (logo та info) ------------------------------------- */
+/* ------------------------------------- 4. Контактна інформація ------------------------------------- */
 .contact-block {
     display: flex; 
     align-items: center;
@@ -129,45 +134,29 @@ body {
     font-weight: 500;
 }
 
-/* ------------------------------------- 5. Кнопка Share (sharebutton) ------------------------------------- */
-.sharebutton {
+/* ------------------------------------- 5. Кнопка Share ------------------------------------- */
+.share-button-circle {
     position: absolute;
     bottom: 30px; 
     right: 30px; 
     width: 80px; 
     height: 80px; 
     border-radius: 50%; 
-    background-color: #4CAF50; 
-    color: #fff;
+    background-color: #4CAF50; /* Яскраво-зелений */
     border: none;
-    font-size: 0.9em;
-    font-weight: bold;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 30;
-    /* Видаляємо текст "Share", оскільки він є частиною зображення sharebutton.png, але залишаємо його для доступності */
-    text-indent: -9999px; 
+    padding: 0;
 }
 
-/* Стилізуємо іконку, якщо вона є окремим файлом */
-.sharebutton .share-icon {
+.share-icon-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* Використовуємо blend-mode, щоб зображення іконки sharebutton.png злилося з фоном кнопки */
+    mix-blend-mode: multiply; /* Або normal, якщо зображення вже має колір */
 }
-/* Якщо "sharebutton.png" містить лише іконку без тексту, використовуйте цей блок:
-.sharebutton {
-    ... інші стилі ...
-    text-indent: 0; 
-}
-.sharebutton .share-icon {
-    display: none;
-}
-*/
