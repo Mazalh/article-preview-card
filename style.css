@@ -10,116 +10,89 @@ body {
 }
 
 .card-container {
-  width: 800px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Фото університету */
-.photouni {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 20px 20px 0 0;
-}
-
-/* Основний фон */
-.midlspace {
-  position: relative;
-  width: 100%;
   background: #fff;
-  border-radius: 20px;
-  margin-top: -50px; /* перекриває фотку */
-  padding: 80px 20px 20px 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Лого */
-.logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  border: 3px solid #fff;
+/* Ліва частина */
+.left-block {
+  flex: 2;
+}
+
+.university-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Заголовок */
-.header {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-align: center;
+/* Права частина */
+.right-block {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
 }
 
-/* Основна інформація */
-.baseinfo {
-  width: 100%;
-  font-size: 16px;
-  background: #f0f0f0;
-  border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Share кнопка */
-.sharebutton {
+/* Соц. іконки (правий верхній кут) */
+.social-icons {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
-  background: #007bff;
-  color: #fff;
-  font-size: 24px;
-  border-radius: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Панель Share */
-.backpanelshare {
-  position: absolute;
-  top: 80px;
-  right: 20px;
-  background: #f0f0f0;
-  border-radius: 15px;
-  display: none;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 15px;
+/* Заголовок */
+.header h1, .header h2, .header h3 {
+  margin: 5px 0;
 }
 
-.backpanelshare img {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: transform 0.2s;
-}
-
-.backpanelshare img:hover {
-  transform: scale(1.2);
-}
-
-/* Інформація про мене */
-.info {
-  width: 100%;
-  font-size: 14px;
+/* Основний текст */
+.main-text {
+  margin-top: 100px;
+  font-size: 16px;
   line-height: 1.5;
-  background: #f0f0f0;
-  border-radius: 15px;
-  padding: 10px 15px;
-  margin-top: 20px;
+}
+
+/* Контакти (нижня середина) */
+.contacts {
   text-align: center;
+  margin-top: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+/* Кнопка Share (правий нижній кут) */
+.share-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
 }
