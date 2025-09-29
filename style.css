@@ -17,19 +17,14 @@ body {
   align-items: center;
 }
 
-/* Обгортка для фото, щоб центр */
-.photouni-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 20px 20px 0 0;
-}
-
+/* Фото університету */
 .photouni {
   width: 100%;
   max-height: 500px;
-  object-fit: contain;
+  object-fit: cover; /* заповнює контейнер і видно центр картинки */
+  display: block;
+  border-radius: 20px 20px 0 0;
+  margin: 0 auto;
 }
 
 /* Основний фон */
@@ -138,3 +133,4 @@ body {
   border-radius: 50%;
   margin-bottom: 5px;
 }
+
