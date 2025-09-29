@@ -1,38 +1,46 @@
-<div class="banner-wrapper">
-    <div class="ad-card">
-        
-        <div class="illustration-area illustration-placeholder">
-            </div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Картка з Share</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card-container">
+    <!-- Фото університету -->
+    <img src="images/photouni.jpg" alt="Університет" class="photouni">
 
-        <div class="content-area">
-            
-            <div class="social-links-bar">
-                <div class="social-icon-box social-placeholder instagram-placeholder"></div>
-                <div class="social-icon-box social-placeholder facebook-placeholder"></div>
-                <div class="social-icon-box social-placeholder copy-link-placeholder"></div>
-            </div>
+    <div class="midlspace">
+      <!-- Лого / Фото профілю -->
+      <img src="images/logo.jpg" alt="Лого" class="logo">
 
-            <div class="header">
-                <span>Європейський</span>
-                <span>Університет:</span>
-                <span>Ваш Шлях до Успіху</span>
-                <span>у Сфері Освіти</span>
-            </div>
+      <!-- Заголовок -->
+      <div class="header">Європейський Університет</div>
 
-            <p class="baseinfo">
-                Здобувайте якісну європейську освіту та відкривайте нові горизонти разом з Європейським Університетом. Наші сучасні програми та професійні викладачі допоможуть вам реалізувати свій потенціал. Запрошуємо до студентської родини!
-            </p>
+      <!-- Основна інформація -->
+      <div class="baseinfo">
+        Освітні програми для майбутніх спеціалістів.
+      </div>
 
-            <div class="contact-block">
-                <div class="logo-placeholder"></div> <div class="info">
-                    <p>nazar.telichko@e-u.edu.ua</p>
-                    <p>+380982141231</p>
-                </div>
-            </div>
+      <!-- Кнопка Share -->
+      <div class="sharebutton" onclick="toggleSharePanel()">🔗</div>
 
-            <button class="share-button-circle share-placeholder">
-                SHARE
-            </button>
-        </div>
+      <!-- Панель Share -->
+      <div class="backpanelshare" id="backpanelshare">
+        <img src="images/facebooklogo.png" class="facebooklogo">
+        <img src="images/instagramlogo.png" class="instagramlogo">
+        <img src="images/copyurl.png" class="copyurl">
+      </div>
+
+      <!-- Інформація про мене -->
+      <div class="info">
+        <p>Email: email@example.com</p>
+        <p>Тел: +380 00 000 0000</p>
+      </div>
     </div>
-</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
