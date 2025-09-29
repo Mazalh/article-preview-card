@@ -1,37 +1,158 @@
-<div class="card-container">
-    <div class="card">
-        <div class="left-block">
-            <img src="images/photouni.jpg" alt="Університет" class="university-img">
-        </div>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f0f0f0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        <div class="right-block">
+.card-container {
+    width: 800px; /* Фіксована ширина для контролю макету */
+    max-width: 95%;
+}
 
-            <div class="social-icons">
-                <span class="icon-circle"><img src="images/instagramlogo.png" alt="Instagram"></span>
-                <span class="icon-circle"><img src="images/facebooklogo.png" alt="Facebook"></span>
-                <span class="icon-circle"><img src="images/copyurl.png" alt="Copy"></span>
-            </div>
+/* Основний закруглений блок */
+.card {
+    display: block; /* Змінено з flex на block для абсолютної/плаваючої розмітки */
+    position: relative;
+    background: #f7f7f7; /* Світло-бежевий фон, як на постері */
+    border-radius: 40px; 
+    padding: 30px; 
+    min-height: 480px; 
+    overflow: hidden; /* Важливо для обрізання фону ілюстрації */
+}
 
-            <div class="header">
-                <span class="title-line large-title">Європейський</span>
-                <span class="title-line large-title">Університет:</span>
-                <span class="title-line large-title">Ваш Шлях до Успіху</span>
-                <span class="title-line large-title">у Сфері Освіти</span>
-            </div>
+/* ------------------- Ліва частина: Ілюстрація ------------------- */
+.left-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%; /* Більше місця для ілюстрації */
+    height: 100%;
+    z-index: 10; 
+    /* Додаємо маскування, щоб ілюстрація плавно зливалася з фоном */
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+}
 
-            <div class="main-text">
-                Здобувайте якісну європейську освіту та відкривайте нові горизонти разом з Європейським Університетом. Наші сучасні програми та професійні викладачі допоможуть вам реалізувати свій потенціал. Запрошуємо до студентської родини!
-            </div>
-            
-            <div class="contact-area">
-                <img src="images/logo.jpg" alt="Аватар" class="avatar">
-                <div class="contact-details">
-                    <p>nazar.telichko@e-u.edu.ua</p>
-                    <p>+380982141231</p>
-                </div>
-            </div>
+.university-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Забезпечуємо, щоб ілюстрація була всередині card */
+    border-radius: 40px 0 0 40px; 
+}
 
-            <button class="share-button">Share</button>
-        </div>
-    </div>
-</div>
+/* ------------------- Права частина: Текст та інфо ------------------- */
+.right-block {
+    position: relative; 
+    float: right; /* Розташовуємо праворуч */
+    width: 45%; /* Менша ширина, але вона накладається на left-block */
+    min-height: 450px;
+    padding: 20px 0 0 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Розтягуємо вміст вертикально */
+}
+
+/* ------------------- 1. Соц. іконки ------------------- */
+.social-icons {
+    position: absolute;
+    top: 0px; 
+    right: 0px; 
+    display: flex;
+    gap: 5px;
+    z-index: 30; 
+}
+
+.icon-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ------------------- 2. Заголовок ------------------- */
+.header {
+    margin-top: 50px; /* Відступ від соц. іконок */
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: #333;
+    text-align: left;
+    font-weight: 700;
+}
+
+.title-line {
+    display: block; /* Кожен span на новому рядку */
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ------------------- 3. Основний текст ------------------- */
+.main-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    flex-grow: 1; /* Займати весь простір між заголовком і контактами */
+    padding-bottom: 20px;
+}
+
+/* ------------------- 4. Контакти ------------------- */
+.contact-area {
+    display: flex; /* Розміщення аватара та тексту поруч */
+    align-items: center;
+    justify-content: flex-start; 
+    margin-bottom: 70px; /* Залишаємо місце для кнопки Share */
+    padding-left: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.contact-details p {
+    margin: 2px 0;
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ------------------- 5. Кнопка Share ------------------- */
+.share-button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%; 
+    background: #4CAF50; 
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 30;
+}
