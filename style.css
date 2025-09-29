@@ -21,11 +21,11 @@ body {
 .photouni {
   width: 100%;
   max-height: 500px;
-  object-fit: cover; /* центр картинки видно */
+  object-fit: cover;       /* кадрує фото, зберігаючи пропорції */
+  object-position: center; /* важливо! центр по горизонталі і вертикалі */
   display: block;
   border-radius: 20px 20px 0 0;
-  margin: 0 auto; /* центр по горизонталі */
-  transform: none; /* прибираємо зсув */
+  margin: 0 auto;          /* центр по горизонталі */
 }
 
 /* Основний фон */
