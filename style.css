@@ -1,170 +1,37 @@
-/* Оновлений CSS для імітації макету */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Більш сучасний шрифт */
-    background: #f0f0f0; /* Світло-сірий фон сторінки */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+<div class="card-container">
+    <div class="card">
+        <div class="left-block">
+            <img src="images/photouni.jpg" alt="Університет" class="university-img">
+        </div>
 
-.card-container {
-    /* Забезпечуємо візуальний простір навколо основного блоку */
-    width: 800px; /* Фіксована ширина для кращого контролю макету */
-    max-width: 95%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Легка тінь */
-}
+        <div class="right-block">
 
-/* Основний закруглений блок, що імітує "фон" на зображенні */
-.card {
-    /* Змінюємо flex: left-block і right-block тепер розміщуються абсолютно/частково накладаються */
-    display: block;
-    position: relative;
-    background: #FFFFFF; /* Білий/світло-бежевий фон, як на постері */
-    border-radius: 40px; /* Більш виражені заокруглення */
-    padding: 30px; /* Внутрішній відступ для вмісту */
-    min-height: 450px; /* Фіксована мінімальна висота */
-}
+            <div class="social-icons">
+                <span class="icon-circle"><img src="images/instagramlogo.png" alt="Instagram"></span>
+                <span class="icon-circle"><img src="images/facebooklogo.png" alt="Facebook"></span>
+                <span class="icon-circle"><img src="images/copyurl.png" alt="Copy"></span>
+            </div>
 
-/* ------------------- Ліва частина: Ілюстрація ------------------- */
-.left-block {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* Займає приблизно 60% ширини і частково перекривається текстом */
-    width: 60%;
-    height: 100%;
-    /* Маскуємо ілюстрацію, щоб вона мала заокруглення та не виходила за межі card */
-    overflow: hidden;
-    border-radius: 40px 0 0 40px;
-    z-index: 10; /* Перекриває частину правого блоку */
-}
+            <div class="header">
+                <span class="title-line large-title">Європейський</span>
+                <span class="title-line large-title">Університет:</span>
+                <span class="title-line large-title">Ваш Шлях до Успіху</span>
+                <span class="title-line large-title">у Сфері Освіти</span>
+            </div>
 
-.university-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Застосовуємо трансформацію для імітації розташування/вирізання на малюнку */
-    transform: scale(1.1);
-}
+            <div class="main-text">
+                Здобувайте якісну європейську освіту та відкривайте нові горизонти разом з Європейським Університетом. Наші сучасні програми та професійні викладачі допоможуть вам реалізувати свій потенціал. Запрошуємо до студентської родини!
+            </div>
+            
+            <div class="contact-area">
+                <img src="images/logo.jpg" alt="Аватар" class="avatar">
+                <div class="contact-details">
+                    <p>nazar.telichko@e-u.edu.ua</p>
+                    <p>+380982141231</p>
+                </div>
+            </div>
 
-/* ------------------- Права частина: Текст та контакти ------------------- */
-.right-block {
-    position: relative; /* Щоб діти .social-icons та .share-button могли позиціонуватися відносно нього */
-    float: right; /* Розташовуємо праворуч */
-    width: 50%; /* Займає праву половину, накладаючись на left-block */
-    padding: 20px 0 0 20px;
-    z-index: 20; /* Поверх ілюстрації */
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Заголовок та Основний Текст */
-.header {
-    margin-bottom: 20px;
-    padding-top: 20px;
-}
-
-.header h1, .header h2, .header h3 {
-    margin: 0;
-    line-height: 1.1;
-    color: #333;
-    text-align: left;
-}
-
-.header h1 {
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.header h2 {
-    font-size: 32px;
-    font-weight: 700;
-}
-
-.header h3 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.main-text {
-    margin-top: 10px; /* Зменшуємо відступ */
-    font-size: 14px;
-    line-height: 1.5;
-    color: #555;
-    flex-grow: 1; /* Дозволяє тексту займати доступний простір */
-}
-
-/* ------------------- Соц. іконки ------------------- */
-.social-icons {
-    /* Переміщуємо в правий верхній кут блоку card, не right-block */
-    position: absolute;
-    top: 20px;
-    right: 30px; /* Позиціонуємо відносно .card */
-    display: flex;
-    gap: 5px;
-    background-color: #f7f7f7; /* Фон для кращого контрасту */
-    border-radius: 20px;
-    padding: 5px 10px;
-    z-index: 30; /* Накладаємо поверх усього */
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    object-fit: contain;
-}
-
-/* ------------------- Контакти ------------------- */
-.contacts {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Вирівнюємо по лівому краю контактного блоку */
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: left; /* Вирівнювання тексту контактів */
-    padding-left: 10px; /* Відступ від краю */
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 15px;
-    flex-shrink: 0;
-}
-
-.contacts p {
-    margin: 2px 0;
-    font-size: 13px;
-    color: #333;
-    font-weight: 500;
-}
-
-/* ------------------- Кнопка Share ------------------- */
-.share-button {
-    /* Переміщуємо в правий нижній кут блоку card */
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 80px; /* Кругла форма */
-    height: 80px;
-    border-radius: 50%; /* Кругла форма */
-    background: #4CAF50; /* Яскраво-зелений */
-    color: #fff;
-    border: none;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    cursor: pointer;
-    z-index: 30;
-}
+            <button class="share-button">Share</button>
+        </div>
+    </div>
+</div>
