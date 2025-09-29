@@ -6,39 +6,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="card-container">
     <!-- Фото університету -->
     <img src="images/photouni.jpg" alt="Університет" class="photouni">
 
-    <!-- Середній фон -->
-    <div class="midlspace"></div>
+    <!-- Основний фон -->
+    <div class="midlspace">
+      <!-- Заголовок -->
+      <div class="header">Європейський Університет</div>
 
-    <!-- Заголовок -->
-    <div class="header">Тут заголовок</div>
+      <!-- Основна інформація -->
+      <div class="baseinfo">
+        Освітні програми для майбутніх спеціалістів.
+      </div>
 
-    <!-- Основна інформація -->
-    <div class="baseinfo">Тут основна інформація</div>
+      <!-- Лого / Фото профілю -->
+      <img src="images/logo.jpg" alt="Лого" class="logo">
 
-    <!-- Лого / Фото профілю -->
-    <img src="images/logo.jpg" alt="Лого" class="logo">
+      <!-- Кнопка Share -->
+      <div class="sharebutton" onclick="toggleSharePanel()">🔗</div>
 
-    <!-- Кнопка Share -->
-    <div class="sharebutton" onclick="toggleSharePanel()"></div>
+      <!-- Панель Share -->
+      <div class="backpanelshare" id="backpanelshare">
+        <img src="images/facebooklogo.png" class="facebooklogo">
+        <img src="images/instagramlogo.png" class="instagramlogo">
+        <img src="images/copyurl.png" class="copyurl">
+      </div>
 
-    <!-- Панель Share з іконками -->
-    <div class="backpanelshare" id="backpanelshare">
-      <img src="images/facebooklogo.png" class="facebooklogo">
-      <img src="images/instagramlogo.png" class="instagramlogo">
-      <img src="images/copyurl.png" class="copyurl">
-    </div>
-
-    <!-- Інформація про мене (контакти) -->
-    <div class="info">
-      <p>email@example.com</p>
-      <p>+380 00 000 0000</p>
+      <!-- Інформація про мене -->
+      <div class="info">
+        <p>Email: email@example.com</p>
+        <p>Тел: +380 00 000 0000</p>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
